@@ -1,8 +1,6 @@
 package com.ssm.demo.common;
 
-/**
- * Created by 13 on 2017/6/26.
- */
+
 public class Constants {
 
     public static final int RESULT_CODE_SUCCESS = 200;  // 成功处理请求
