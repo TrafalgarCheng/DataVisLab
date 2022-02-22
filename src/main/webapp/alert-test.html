@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SSM | alert Test</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="dist/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="dist/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- sweet alert -->
+    <link rel="stylesheet" href="plugins/sweetalert/sweetalert.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition login-page">
+<div style="width:720px;margin:7% auto">
+    <div class="content">
+        <br>
+        <button class="btn btn-info btn-lg" onclick="openAlert()">
+            alert弹框
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-lg" onclick="openSweetAlert()">
+            SweetAlert弹框
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-lg" onclick="openSweetAlertWithIcon()">
+            SweetAlert弹框(含icon)
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-lg" onclick="openSweetAlertWithConfirm()">
+            SweetAlert弹框(确认框)
+        </button>
+    </div>
+</div>
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+
+    /**
+     * 普通alert提示框
+     */
+    function openAlert() {
+        alert("我是alert弹框！")
+    }
+
+    /**
+     * SweetAlert提示框
+     */
+    function openSweetAlert() {
+        swal("我是SweetAlert弹框！");
+    }
+
+    /**
+     * 含特殊icon的SweetAlert提示框
+     */
+    function openSweetAlertWithIcon() {
+
+        // swal("错误提示!", {
+        //     icon: "error"
+        // });
+
+        swal("成功提示!", {
+            icon: "success"
+        });
+    }
+
+    /**
+     * SweetAlert确认提示框
+     */
+    function openSweetAlertWithConfirm() {
+        swal({
+            title: "确认弹框",
+            text: "确认执行该操作吗?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((flag) => {
+            if(flag) {
+                swal("已确认该操作");
+            }else{
+                swal("已取消该操作");}});
+    }
+</script>
+</body>
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- sweet alert -->
+<script src="plugins/sweetalert/sweetalert.min.js"></script>
+</html>

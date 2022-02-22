@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SSM | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="dist/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="dist/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition login-page">
+<div style="width:720px;margin:7% auto">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- /.col-md-6 -->
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="m-0">接口测试1 (含身份验证)</h5>
+                        </div>
+                        <div class="card-body">
+                            <input type="text" id="token" class="form-control" placeholder="请输入正确的token值">
+                            <h6 class="card-title">返回数据如下：</h6>
+                            <p class="card-text" id="test1"></p>
+                            <a href="#" class="btn btn-primary" onclick="requestByLoginValid()">发送请求</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="m-0">接口测试2 (无身份验证)</h5>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">返回数据如下：</h6>
+                            <p class="card-text" id="test2"></p>
+                            <a href="#" class="btn btn-primary" onclick="requestNoValid()">发送请求</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-md-6 -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="dist/js/public.js"></script>
+<script type="text/javascript">
+    function requestNoValid() {
+        //请求无需登陆验证的接口
+        $.ajax({
+            type: "GET",//方法类型
+            dataType: "json",//预期服务器返回的数据类型
+            url: "testLogin/test2",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $("#test2").html(JSON.stringify(result));
+            },
+            error: function () {
+                $("#test2").html("接口异常，请联系管理员！");
+            }
+        });
+    }
+
+    function requestByLoginValid() {
+        var token = $("#token").val();
+        if (isNull(token)){
+            alert("请输入正确的token值");
+            return;
+        }
+        //请求无需登陆验证的接口
+        $.ajax({
+            type: "GET",//方法类型
+            dataType: "json",//预期服务器返回的数据类型
+            beforeSend: function (request) {
+                //设置header值
+                request.setRequestHeader("token", token);
+            },
+            url: "testLogin/test1",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $("#test1").html(JSON.stringify(result));
+            },
+            error: function () {
+                $("#test1").html("接口异常，请联系管理员！");
+            }
+        });
+    }
+</script>
+</body>
+</html>

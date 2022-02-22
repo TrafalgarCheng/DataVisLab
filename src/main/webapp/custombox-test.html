@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SSM | Custombox Test</title>
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.css">
+    <!-- sweet alert -->
+    <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link href="plugins/custombox/custombox.min.css" rel="stylesheet">
+</head>
+<body>
+<div style="width:720px;margin:7% auto">
+    <div class="content">
+        <button class="btn btn-primary btn-lg" onclick="custombox1()">
+            打开custombox1
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-lg" onclick="custombox2()">
+            打开custombox2
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-primary btn-lg" onclick="custombox3()">
+            打开custombox3
+        </button>
+    </div>
+
+    <div class="content" id="custombox1" style="display: none">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 400px;height: 420px;">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="custombox1Label">custombox1</h6>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="alert alert-danger">ESC键退出或者点击空白处退出</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="alert">这是custombox1！</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.content -->
+    </div>
+
+    <div class="content" id="custombox2" style="display: none">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 400px;height: 520px;">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="custombox2Label">这是custombox2</h6>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="alert alert-danger">ESC键退出或者点击空白处退出</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="type" class="control-label">type:</label>
+                            <input type="text" class="form-control" id="type">
+                        </div>
+                        <div class="form-group">
+                            <label for="style" class="control-label">style:</label>
+                            <input type="text" class="form-control" id="style">
+                        </div>
+                        <div class="form-group">
+                            <label for="content" class="control-label">content:</label>
+                            <input type="text" class="form-control" id="content">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="editButton">确认</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.content -->
+    </div>
+
+    <div class="content" id="custombox3" style="display: none">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 400px;height: 420px;">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="custombox3Label">custombox3</h6>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="alert alert-danger">ESC键退出或者点击空白处退出</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="alert">这是custombox3</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.content -->
+    </div>
+</div>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/custombox/custombox.min.js"></script>
+<script src="plugins/custombox/custombox.legacy.min.js"></script>
+</body>
+<script type="text/javascript">
+    function custombox1() {
+        var custombox1 = new Custombox.modal({
+            content: {
+                effect: 'fadein',
+                target: '#custombox1'
+            }
+        });
+        custombox1.open();
+    }
+
+    function custombox2() {
+        var custombox2 = new Custombox.modal({
+            content: {
+                effect: 'slide',
+                target: '#custombox2'
+            }
+        });
+        custombox2.open();
+    }
+
+    function custombox3() {
+        var custombox3 = new Custombox.modal({
+            content: {
+                effect: 'rotate',
+                target: '#custombox3',
+                onOpen: function () {
+                    alert("custombox3 open事件！")
+                },
+                onComplete: function () {
+                    alert("custombox3 complete事件！")
+                },
+                onClose: function () {
+                    alert("custombox3 close事件！")
+                }
+            }
+        });
+        custombox3.open();
+    }
+</script>
+</html>
