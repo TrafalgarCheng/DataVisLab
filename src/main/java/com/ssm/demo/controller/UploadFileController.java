@@ -23,9 +23,6 @@ import java.util.Random;
 
 import static com.ssm.demo.common.Constants.FILE_PRE_URL;
 
-/**
- * Created by 13 on 2017/7/17.
- */
 @Controller
 @RequestMapping("/upload")
 public class UploadFileController {
@@ -75,7 +72,6 @@ public class UploadFileController {
      * @param chunk  当前所传文件的当前分片数
      * @return
      * @Description: 大文件上传前分片检查
-     * @author: 13
      */
     @ResponseBody
     @RequestMapping(value = "/checkChunk")
@@ -106,7 +102,6 @@ public class UploadFileController {
      * @param chunk  当前所传文件的当前分片数
      * @return
      * @Description: 大文件分片上传
-     * @author: 13
      */
     @ResponseBody
     @RequestMapping(value = "/files")
