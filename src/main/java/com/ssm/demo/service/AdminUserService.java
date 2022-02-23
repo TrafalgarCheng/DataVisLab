@@ -7,10 +7,6 @@ import com.ssm.demo.utils.PageUtil;
 import java.io.File;
 import java.util.List;
 
-/**
- * Created by 13 on 2018/7/4.
- */
-
 public interface AdminUserService {
 
     PageResult getAdminUserPage(PageUtil pageUtil);
