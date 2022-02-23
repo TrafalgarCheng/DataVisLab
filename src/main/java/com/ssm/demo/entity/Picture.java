@@ -3,10 +3,6 @@ package com.ssm.demo.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author 13
- * @date 2018-07-18
- */
 public class Picture implements Serializable {
 
     //主键
