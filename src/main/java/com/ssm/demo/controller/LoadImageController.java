@@ -19,11 +19,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-/**
- * Created by 13 on 2017/4/7.
- * <p>
- * 重写了该方法，代码是UploadFileController.java中的uploadFile()方法，本方法以后就尽量不用了。
- */
 @Controller
 @RequestMapping("/images")
 public class LoadImageController {
