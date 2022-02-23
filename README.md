@@ -15,7 +15,7 @@
 * 建数据库表：id，用户名，md5密码，token，是否删除，添加时间
 * Dao：在配置文件中的User mapper中配置具体方法实现，原始dao层只有接口.
 * 方法：通过查询用户名，密码和token值返回用户对象.
-* 业务层（service）：作为User对象获取dao层数据，判断是否更新token，然后返回user对象.
+* 业务层（service）：作为User对象获取dao层数据，判断是否需要更新token，然后返回user对象.
 * 控制层（controller）：用StringUtils工具类判断输入的用户名和密码是否为空，再调用业务层返回user对象，最后再返回result类。
 * Result类单独说：返回的结果不止包含数据，还有message告诉成功还是失败，一个code200，404来告诉具体状态，用一个const类存不同状态对应的code值，用resultgenerator来按照controller的逻辑修改result的参数（通过setter）, 最后result的值和信息通过@RequestMapping指定的路径在访问这个路径时调用login方法然后显示结果.
 
