@@ -6,9 +6,6 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by 13 on 2018/7/4.
- */
 public interface AdminUserDao {
 
     /**
