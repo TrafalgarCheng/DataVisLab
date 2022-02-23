@@ -5,10 +5,6 @@ import com.ssm.demo.entity.Article;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author 13
- * @date 2018-08-15
- */
 public interface ArticleDao {
     /**
      * 返回相应的数据集合
