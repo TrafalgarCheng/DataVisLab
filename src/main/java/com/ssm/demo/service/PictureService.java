@@ -7,10 +7,6 @@ import com.ssm.demo.utils.PageUtil;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author 13
- * @date 2018-07-18
- */
 public interface PictureService {
 
     /**
