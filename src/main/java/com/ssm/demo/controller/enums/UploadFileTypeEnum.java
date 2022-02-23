@@ -1,10 +1,5 @@
 package com.ssm.demo.controller.enums;
 
-/**
- * 允许上传的文件格式 可自行添加
- *
- * @author 13
- */
 public enum UploadFileTypeEnum {
 
     ERROR_TYPE("error_type", "格式错误"),
