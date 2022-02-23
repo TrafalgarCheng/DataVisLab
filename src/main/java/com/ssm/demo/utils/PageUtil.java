@@ -3,9 +3,6 @@ package com.ssm.demo.utils;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * 查询参数
- */
 public class PageUtil extends LinkedHashMap<String, Object> {
 	//当前页码
     private int page;
