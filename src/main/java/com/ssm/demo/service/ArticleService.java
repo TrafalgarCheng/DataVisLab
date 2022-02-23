@@ -9,10 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
-/**
- * @author 13
- * @date 2018-08-15
- */
 public interface ArticleService {
 
     PageResult getArticlePage(PageUtil pageUtil);
