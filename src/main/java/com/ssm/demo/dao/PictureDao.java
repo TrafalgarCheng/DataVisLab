@@ -5,10 +5,6 @@ import com.ssm.demo.entity.Picture;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author 13
- * @date 2018-07-18
- */
 public interface PictureDao {
     /**
      * 返回数据列表
