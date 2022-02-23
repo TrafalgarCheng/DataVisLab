@@ -60,7 +60,7 @@
       1. 在Controller层中加入判断分片的方法checkchunk，验证从前端传过来的两个参数chunks（分片总数），chunk（当前分片序号）
       2. 然后用StringBuilder生成文件存放地址和文件名，用try抓取这一段的错误，有错误就返回失败。
       3. 在Controller再加入新的upload方法，从request中获取存放地址，同样用Builder组成文件名，如果存放地址没有分片，就新建一个文件夹，如果是最后一个分片，就调用合并方法合并所有文件    	（具体实现是用FileInputStream拿取每一个分片，再通过SequenceInputStream两个分片文件进行合并）。
-      4. 最后删除原来分片所在文件夹。
+      4. 最后删除原来分片所在的文件夹。
 * 断点续传就是再上传前验证分片是否已存在的逻辑。
 
 
