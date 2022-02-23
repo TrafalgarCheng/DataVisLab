@@ -15,10 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-/**
- * @author 13
- * @date 2018-07-18
- */
 @RestController
 @RequestMapping("/pictures")
 public class PictureController {
