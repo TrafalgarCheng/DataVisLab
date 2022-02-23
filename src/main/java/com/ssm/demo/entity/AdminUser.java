@@ -3,9 +3,6 @@ package com.ssm.demo.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by 13 on 2018/6/27.
- */
 public class AdminUser implements Serializable {
 
     /**
