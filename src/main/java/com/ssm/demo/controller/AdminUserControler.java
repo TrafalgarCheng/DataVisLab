@@ -19,9 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.util.*;
 
-/**
- * Created by 13 on 2018/7/4.
- */
 @RestController
 @RequestMapping("/users")
 public class AdminUserControler {
